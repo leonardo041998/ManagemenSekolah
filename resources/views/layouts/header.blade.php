@@ -93,14 +93,14 @@
                         alt="Soeng Souy"></span> </a>
             <div class="dropdown-menu">
                 <div class="user-header">
-                    <div class="avatar avatar-sm"> <img src="{{ asset('admin/assets/img/profiles/avatar-01.jpg') }}"
-                            alt="User Image" class="avatar-img rounded-circle"> </div>
+                    {{-- <div class="avatar avatar-sm"> <img src="{{ asset('admin/assets/img/profiles/avatar-01.jpg') }}"
+                            alt="User Image" class="avatar-img rounded-circle"> </div> --}}
                     <div class="user-text">
-                        <h6>Leonardo Tatulus</h6>
-                        <p class="text-muted mb-0">Administrator</p>
+                        <h6>{{ auth()->user()->name }}</h6>
+                        {{-- <p class="text-muted mb-0">Administrator</p> --}}
                     </div>
                 </div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item"
-                    href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a>
+                    href="settings.html">Account Settings</a> <a class="dropdown-item" href="/logout">Logout</a>
             </div>
         </li>
     </ul>

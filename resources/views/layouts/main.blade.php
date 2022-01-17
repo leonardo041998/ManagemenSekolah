@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
 
+
+
     {{-- <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
@@ -70,6 +72,12 @@
 
     <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="{{ asset('admin/assets/js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/script.js') }}"></script>
     {!! Toastr::message() !!}
 
 

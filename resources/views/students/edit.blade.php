@@ -248,6 +248,27 @@
                                                 </div>
                                             @enderror
                                         </div>
+
+                                        <div class="form-group{{ $errors->has('kelas') ? 'has-error' : '' }} ">
+                                            <label for="exampleInputEmail1">Kelas</label>
+                                            <input name="kelas" value="{{ $students->kelas }}" type="text"
+                                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="Masukkan Kelas">
+                                            @error('kelas') <div class="invalid-feedback">{{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group{{ $errors->has('jurusan') ? 'has-error' : '' }} ">
+                                            <label for="exampleInputEmail1">Jurusan</label>
+                                            <input name="jurusan" value="{{ $students->jurusan }}" type="text"
+                                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="Masukkan Jurusan">
+                                            @error('jurusan') <div class="invalid-feedback">{{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="text-right">
@@ -262,4 +283,4 @@
         </div>
     </div>
 
-@stop
+@endsection

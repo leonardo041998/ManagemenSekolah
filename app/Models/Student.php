@@ -24,6 +24,8 @@ class Student extends Model
     'kelurahan',
     'kecamatan',
     'no_telp',
+    'kelas',
+    'jurusan',
     'avatar',
     'user_id' ];
 

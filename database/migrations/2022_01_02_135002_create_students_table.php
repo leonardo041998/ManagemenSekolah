@@ -32,6 +32,9 @@ class CreateStudentsTable extends Migration
             $table->string('kelurahan')->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('no_telp')->nullable();
+            $table->string('kelas')->nullable();
+            $table->string('jurusan')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }

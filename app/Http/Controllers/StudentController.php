@@ -46,4 +46,10 @@ class StudentController extends Controller
         Toastr::success('Data siswa berhasil dihapus', 'Success');
         return redirect('/students');
     }
+
+    public function profile($id)
+    {
+        $students = \App\Models\Student::find($id);
+        return view('students.profile', ['students' => $students]);
+    }
 }
