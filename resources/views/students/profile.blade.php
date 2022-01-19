@@ -19,14 +19,15 @@
                 <div class="profile-header">
                     <div class="row align-items-center">
                         <div class="col-auto profile-image">
-                            <a href="#"> <img class="rounded-circle" alt="User Image"
-                                    src="{{ asset('admin/assets/img/profiles/avatar-01.jpg') }}"> </a>
+                            <a href="#"> <img class="rounded-circle" alt="User Image" src="{{ $students->getAvatar() }}">
+                            </a>
                         </div>
                         <div class="col ml-md-n2 profile-user-info">
                             <h4 class="user-name mb-3">{{ $students->nama_lengkap }}</h4>
                             <h6 class="text-muted mt-1">{{ $students->kelas }}</h6>
                             <h6 class="text-muted mt-1">{{ $students->jurusan }}</h6>
                         </div>
+
                     </div>
                 </div>
                 <div class="profile-menu">

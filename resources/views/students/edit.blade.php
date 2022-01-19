@@ -269,11 +269,18 @@
                                             @enderror
                                         </div>
 
+                                        <div class="form-group{{ $errors->has('avatar') ? 'has-error' : '' }} ">
+                                            <label for="exampleInputEmail1">Avatar</label>
+                                            <input name="avatar" value="{{ $students->avatar }}" type="file"
+                                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="Masukkan avatar">
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="text-right">
                                     <a href="{{ url()->previous() }}" class="btn btn-default">Cancel</a>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-warning">Update</button>
                                 </div>
                             </form>
                         </div>

@@ -33,8 +33,14 @@ class StudentController extends Controller
 
     public function update(Request $request, $id)
     {
+        
         $students = \App\Models\Student::find($id);
         $students->update($request->all());
+        if ($request->hasFile('avatar')) {
+            $request->file('avatar')->move('img/', $request->file('avatar')->getClientOriginalName());
+            $students->avatar = $request->file('avatar')->getClientOriginalName();
+            $students->save();
+        }
         Toastr::success('Data siswa berhasil diubah', 'Success');
          return redirect('/students');
     }

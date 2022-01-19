@@ -32,8 +32,8 @@ class Student extends Model
     public function getAvatar()
     {
         if(!$this->avatar){
-            return asset('images/default.png');
+            return asset('img/default.png');
         }
-        return asset('images/'.$this->avatar);
+        return asset('img/'.$this->avatar);
     }
 }
