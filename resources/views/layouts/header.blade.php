@@ -89,7 +89,7 @@
         </li>
         <li class="nav-item dropdown has-arrow">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img
-                        class="rounded-circle" src="{{ asset('admin/assets/img/profiles/avatar-01.jpg') }}" width="31"
+                        class="rounded-circle" src="{{ asset('admin/assets/img/profiles/avatar-03.jpg') }}" width="31"
                         alt="Soeng Souy"></span> </a>
             <div class="dropdown-menu">
                 <div class="user-header">
@@ -106,7 +106,7 @@
     </ul>
     <div class="top-nav-search">
         <form method="GET" action="/students">
-            <input name="keyword" type="text" class="form-control" placeholder="Cari NISN siswa disini...">
+            <input name="keyword" type="text" class="form-control" placeholder="Cari disini...">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>

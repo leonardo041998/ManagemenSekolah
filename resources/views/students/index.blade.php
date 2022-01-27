@@ -12,12 +12,12 @@
                             <button type="button" class="btn btn-default float-right" data-toggle="modal"
                                 data-target="#addstudent"><i class="fa fa-plus-square"></i>
                                 Tambah Data </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-nowrap mb-0" style="width:100%">
-                            <thead>
-                                <tr>
+                        <div class="table-responsive">
+                            <table class="table table-nowrap mb-0" style="width:100%">
+                                <thead>
+                                    <tr>
                                     <th>NISN</th>
                                     <th>Nama Lengkap</th>
                                     <th>Tempat Lahir</th>
@@ -36,14 +36,14 @@
                                     <th>Kecamatan</th>
                                     <th>Nomor Telepon</th>
                                     <th>Kelas</th>
-                                    <th>Jurusan</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($params as $students)
-                                    <tr>
-                                        <td hidden class="id">{{ $students->id }}</td>
+                                <tr>
+                                    <td hidden class="id">{{ $students->id }}</td>
                                         <td>{{ $students->nisn }}</td>
                                         <td><a
                                                 href="/students/{{ $students->id }}/profile">{{ $students->nama_lengkap }}</a>
@@ -63,8 +63,8 @@
                                         <td>{{ $students->kelurahan }}</td>
                                         <td>{{ $students->kecamatan }}</td>
                                         <td>{{ $students->no_telp }}</td>
-                                        <td>{{ $students->kelas }}</td>
-                                        <td>{{ $students->jurusan }}</td>
+                                        <td>{{ $students->kelas }} {{ $students->jurusan }}</td>
+                                        <td>{{ $students->status_siswa }}</td>
                                         <td>
                                             <a href="/students/{{ $students->id }}/edit"><i
                                                     class="btn fas fa-pencil-alt m-r-5" style="color: yellowgreen"></i></a>
@@ -266,17 +266,52 @@
                                 </div>
 
                                 <div class="form-floating {{ $errors->has('kelas') ? 'has-error' : '' }} ">
-                                    <label style="font-weight:bold" for="exampleInputEmail1">Kelas</label>
-                                    <input name="kelas" value="{{ old('kelas') }}" type="text" class="form-control"
-                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Kelas">
+                                    <label style="font-weight:bold" for="exampleInputEmail1"> Kelas </label>
+                                    <select id="kelas" class="form-control" name="kelas"
+                                        placeholder="-- Pilih Kelas --">
+                                        <option disabled selected>-Pilih Kelas-</option>
+                                        <option value="X">X</option>
+                                        <option value="XI">XI</option>
+                                        <option value="XII">XII</option>
+                                    </select>
                                     @error('kelas') <div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-floating {{ $errors->has('jurusan') ? 'has-error' : '' }} ">
-                                    <label style="font-weight:bold" for="exampleInputEmail1">Jurusan</label>
-                                    <input name="jurusan" value="{{ old('jurusan') }}" type="text" class="form-control"
-                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Jurusan">
+                                    <label style="font-weight:bold" for="exampleInputEmail1"> Jurusan </label>
+                                    <select id="jurusan" class="form-control" name="jurusan"
+                                        placeholder="-- Pilih Jurusan --">
+                                        <option disabled selected>-Pilih Jurusan-</option>
+                                        <option value="IPA 1">IPA 1</option>
+                                        <option value="IPA 2">IPA 2</option>
+                                        <option value="IPA 3">IPA 3</option>
+                                        <option value="IPA 4">IPA 4</option>
+                                        <option value="IPS 1">IPS 1</option>
+                                        <option value="IPS 2">IPS 2</option>
+                                        <option value="IPS 3">IPS 3</option>
+                                        <option value="IPS 4">IPS 4</option>
+                                    </select>
                                     @error('jurusan') <div class="invalid-feedback">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="form-floating {{ $errors->has('status_siswa') ? 'has-error' : '' }} ">
+                                    <label style="font-weight:bold" for="exampleInputEmail1"> Status </label>
+                                    <select id="status_siswa" class="form-control" name="status_siswa"
+                                        placeholder="-- Pilih Status --">
+                                        <option disabled selected>-Pilih Status-</option>
+                                        <option value="Aktif">Aktif</option>
+                                        <option value="Tidak Aktif">Tidak Aktif</option>
+                                        <option value="Lulus">Lulus</option>
+                                        <option value="Tidak Lulus">Tidak Lulus</option>
+                                    </select>
+                                    @error('status_siswa') <div class="invalid-feedback">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="form-floating {{ $errors->has('avatar') ? 'has-error' : '' }} ">
+                                    <label style="font-weight:bold" for="exampleFormControlTextarea1">Avatar</label>
+                                    <input name="avatar" value="{{ old('avatar') }}" type="file" class="form-control"
+                                        id="exampleFormControlTextarea1" rows="3" aria-describedby="emailHelp">
+                                    @error('avatar') <div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                             </div>
@@ -291,4 +326,4 @@
         </div>
     </div>
 
-@stop
+@endsection

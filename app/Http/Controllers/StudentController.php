@@ -4,25 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use Toastr;
+use Brian2694\Toastr\Facades\Toastr;
+
+use DB;
+
+
 
 class StudentController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->has('keyword')) {
-            $params = \App\Models\Student::where('nisn', 'LIKE', '%' .$request->keyword. '%')->get();
-            } else {
-                $params = \App\Models\Student::all();
-            }
+        if ($request->has('keyword')) {
+            $params = DB::table('students')->where('nama_lengkap', 'LIKE', '%' . $request->keyword . '%')
+                ->orwhere('nisn', 'LIKE', '%' . $request->keyword . '%')
+                ->orwhere('kelas', 'LIKE', '%' . $request->keyword . '%')
+                ->orwhere('jurusan', 'LIKE', '%' . $request->keyword . '%')
+                ->paginate();
+        } else {
+            $params = \App\Models\Student::all();
+        }
         return view('students.index', ['params' => $params]);
     }
 
+
+
     public function create(Request $request)
     {
-       $students = \App\Models\Student::create($request->all());
-       Toastr::success('Data siswa Berhasil Diinput', 'Success');
-          return redirect('/students');
+        $students = \App\Models\Student::create($request->all());
+        Toastr::success('Data siswa Berhasil Diinput', 'Success');
+        return redirect('/students');
     }
 
     public function edit($id)
@@ -33,7 +43,7 @@ class StudentController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+
         $students = \App\Models\Student::find($id);
         $students->update($request->all());
         if ($request->hasFile('avatar')) {
@@ -42,7 +52,7 @@ class StudentController extends Controller
             $students->save();
         }
         Toastr::success('Data siswa berhasil diubah', 'Success');
-         return redirect('/students');
+        return view('students.profile', ['students' => $students]);
     }
 
     public function delete($id)

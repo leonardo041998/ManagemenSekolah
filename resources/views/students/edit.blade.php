@@ -26,6 +26,7 @@
                                             @enderror
                                         </div>
 
+
                                         <div class="form-group{{ $errors->has('nama_lengkap') ? 'has-error' : '' }} ">
                                             <label for="exampleInputEmail1">Nama Lengkap</label>
                                             <input name="nama_lengkap" value="{{ $students->nama_lengkap }}" type="text"
@@ -241,7 +242,7 @@
 
                                         <div class="form-group{{ $errors->has('no_telp') ? 'has-error' : '' }} ">
                                             <label for="exampleFormControlTextarea1">Nomor Telepon</label>
-                                            <input name="no_telp" value="{{ $students->no_telp }}" type="text"
+                                            <input name="no_telp" value="{{ $students->no_telp }}" type="tel"
                                                 class="form-control" id="exampleFormControlTextarea1" rows="3"
                                                 aria-describedby="emailHelp" placeholder="Masukkan Nomor Telepon">
                                             @error('no_telp') <div class="invalid-feedback">{{ $message }}
@@ -251,21 +252,97 @@
 
                                         <div class="form-group{{ $errors->has('kelas') ? 'has-error' : '' }} ">
                                             <label for="exampleInputEmail1">Kelas</label>
-                                            <input name="kelas" value="{{ $students->kelas }}" type="text"
-                                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                placeholder="Masukkan Kelas">
-                                            @error('kelas') <div class="invalid-feedback">{{ $message }}
-                                                </div>
+                                            <select id="kelas" class="form-control" name="kelas"
+                                                placeholder="-- Pilih Kelas --">
+                                                <option disabled selected>-Pilih Kelas-</option>
+                                                <option value="X"
+                                                    {{ $students->kelas == 'X' ? 'selected' : '' }}>
+                                                    X</option>
+
+                                                <option value="XI"
+                                                    {{ $students->kelas == 'XI' ? 'selected' : '' }}>
+                                                    XI
+                                                </option>
+
+                                                <option value="XII"
+                                                    {{ $students->kelas == 'XII' ? 'selected' : '' }}>
+                                                    XII
+                                                </option>
+
+                                            </select>
+                                            @error('kelas') <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
                                         <div class="form-group{{ $errors->has('jurusan') ? 'has-error' : '' }} ">
                                             <label for="exampleInputEmail1">Jurusan</label>
-                                            <input name="jurusan" value="{{ $students->jurusan }}" type="text"
-                                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                placeholder="Masukkan Jurusan">
-                                            @error('jurusan') <div class="invalid-feedback">{{ $message }}
-                                                </div>
+                                            <select id="jurusan" class="form-control" name="jurusan"
+                                                placeholder="-- Pilih Jurusan --">
+                                                <option disabled selected>-Pilih Jurusan-</option>
+                                                <option value="IPA 1"
+                                                    {{ $students->jurusan == 'IPA 1' ? 'selected' : '' }}>
+                                                    IPA 1
+                                                </option>
+                                                
+                                                <option value="IPA 2"
+                                                    {{ $students->jurusan == 'IPA 2' ? 'selected' : '' }}>
+                                                    IPA 2
+                                                </option>
+                                                    
+                                                <option value="IPA 3"
+                                                    {{ $students->jurusan == 'IPA 3' ? 'selected' : '' }}>
+                                                    IPA 3
+                                                </option>
+
+                                                <option value="IPA 4"
+                                                    {{ $students->jurusan == 'IPA 4' ? 'selected' : '' }}>
+                                                    IPA 4
+                                                </option>
+
+                                                <option value="IPS 1"
+                                                    {{ $students->jurusan == 'IPS 1' ? 'selected' : '' }}>
+                                                    IPS 1
+                                                </option>
+                                                <option value="IPS 2"
+                                                    {{ $students->jurusan == 'IPS 2' ? 'selected' : '' }}>
+                                                    IPS 2
+                                                </option>
+                                                <option value="IPS 3" 
+                                                    {{ $students->jurusan == 'IPS 3' ? 'selected' : '' }}>
+                                                    IPS 3
+                                                </option>
+                                                <option value="IPS 4"
+                                                    {{ $students->jurusan == 'IPS 4' ? 'selected' : '' }}>
+                                                    IPS 4
+                                                </option>
+                                            </select>
+                                            @error('jurusan') <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group{{ $errors->has('status_siswa') ? 'has-error' : '' }} ">
+                                            <label for="exampleInputEmail1">Status</label>
+                                            <select id="status_siswa" class="form-control" name="status_siswa"
+                                                placeholder="-- Pilih Status --">
+                                                <option disabled selected>-Pilih Status-</option>
+                                                <option value="Aktif"
+                                                    {{ $students->status_siswa == 'Aktif' ? 'selected' : '' }}>
+                                                    Aktif</option>
+
+                                                <option value="Tidak Aktif"
+                                                    {{ $students->status_siswa == 'Tidak Aktif' ? 'selected' : '' }}>
+                                                    Tidak Aktif</option>
+                                                    
+                                                    <option value="Lulus"
+                                                    {{ $students->status_siswa == 'Lulus' ? 'selected' : '' }}>
+                                                    Lulus</option>
+
+                                                <option value="Tidak Lulus"
+                                                    {{ $students->status_siswa == 'Tidak Lulus' ? 'selected' : '' }}>
+                                                    Tidak Lulus</option>
+
+                                            </select>
+                                            @error('status_siswa') <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 

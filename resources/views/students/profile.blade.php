@@ -24,8 +24,8 @@
                         </div>
                         <div class="col ml-md-n2 profile-user-info">
                             <h4 class="user-name mb-3">{{ $students->nama_lengkap }}</h4>
-                            <h6 class="text-muted mt-1">{{ $students->kelas }}</h6>
-                            <h6 class="text-muted mt-1">{{ $students->jurusan }}</h6>
+                            <h6 class="text-muted mt-1">{{ $students->kelas }} {{ $students->jurusan }}</h6>
+                            <h6 class="text-muted mt-1">{{ $students->status_siswa }}</h6>
                         </div>
 
                     </div>
@@ -57,6 +57,7 @@
                                             </p>
                                             <p class="col-sm-9">{{ $students->nisn }}</p>
                                         </div>
+
 
                                         <div class="row">
                                             <p style="font-weight:bold" class="col-sm-3 text-sm-right mb-0 mb-sm-3">Nama
