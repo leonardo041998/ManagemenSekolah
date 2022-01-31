@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/feathericon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/morris/morris.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -26,26 +29,31 @@
                             <h1 class="mb-3">Register</h1>
                             <form action="/postregister" method="POST">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-floating  mb-3">
                                     <input class="form-control" name="name" type="text" placeholder="Nama">
+                                    <label for="name">Nama</label>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-floating  mb-3">
                                     <input class="form-control" name="username" type="text" placeholder="Username">
+                                    <label for="username">Usernamae</label>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-floating  mb-3">
                                     <input class="form-control" name="email" type="email" placeholder="Email">
+                                    <label for="email">Email</label>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-floating  mb-3">
                                     <input class="form-control" name="password" type="password"
                                         placeholder="Password">
+                                    <label for="password">Password</label>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-floating  mb-3">
                                     <input class="form-control" name="password_confirmation" type="password"
                                         placeholder="Konfirmasi Password">
+                                    <label for="password_confirmation">Konfirmasi Password</label>
                                 </div>
 
                                 <div class="form-group mb-0">
@@ -67,6 +75,8 @@
     <script src="{{ 'admin/assets/js/bootstrap.min.js' }}"></script>
     <script src="{{ 'admin/assets/plugins/slimscroll/jquery.slimscroll.min.js' }}"></script>
     <script src="{{ 'admin/assets/js/script.js' }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

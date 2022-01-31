@@ -9,6 +9,7 @@ class Student extends Model
 {
     protected $fillable = [
         'nisn',
+        'email',
         'nama_lengkap',
         'tmpt_lahir',
         'tgl_lahir',

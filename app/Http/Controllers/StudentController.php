@@ -30,7 +30,21 @@ class StudentController extends Controller
 
     public function create(Request $request)
     {
+
+        // insert data ke table users
+        $user = new \App\Models\User;
+        $user->role = 'students';
+        $user->name = $request->nama_lengkap;
+        $user->email = $request->email;
+        $user->password = bcrypt('password');
+        $user->remember_token = str_random(60);
+        $user->save();
+
+        // insert data ke table students
+        $request->request->add(['user_id' => $user->id]);
         $students = \App\Models\Student::create($request->all());
+
+
         Toastr::success('Data siswa Berhasil Diinput', 'Success');
         return redirect('/students');
     }

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/feathericon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/plugins/morris/morris.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -28,12 +30,14 @@
                             <p class="account-subtitle">Web Pengelolaan Data Siswa</p>
                             <form action="/postlogin" method="POST">
                                 @csrf
-                                <div class="form-group">
-                                    <input class="form-control" name="username" type="text" placeholder="Username">
+                                <div class="form-floating  mb-3">
+                                    <input class="form-control" id="floatingInput" name="username" type="text" placeholder="Username">
+                                     <label for="username">Username</label>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-floating  mb-3">
                                     <input class="form-control" name="password" type="password"
                                         placeholder="Password">
+                                         <label for="exampleInputEmail1">Password</label>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit">Login</button>
@@ -54,6 +58,7 @@
     <script src="{{ 'admin/assets/js/bootstrap.min.js' }}"></script>
     <script src="{{ 'admin/assets/plugins/slimscroll/jquery.slimscroll.min.js' }}"></script>
     <script src="{{ 'admin/assets/js/script.js' }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
