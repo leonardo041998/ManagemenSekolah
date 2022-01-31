@@ -7,7 +7,7 @@ use App\Models\Student;
 use Brian2694\Toastr\Facades\Toastr;
 
 use DB;
-
+use Str;
 
 
 class StudentController extends Controller
@@ -37,8 +37,8 @@ class StudentController extends Controller
         $user->name = $request->nama_lengkap;
         $user->email = $request->email;
         $user->password = bcrypt('password');
-        $user->remember_token = str_random(60);
-        $user->save();
+        $user->remember_token =
+            $user->save();
 
         // insert data ke table students
         $request->request->add(['user_id' => $user->id]);

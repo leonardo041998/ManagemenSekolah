@@ -69,7 +69,7 @@
                                         <td>{{ $students->status_siswa }}</td>
                                         <td>
                                             <a href="/students/{{ $students->id }}/edit"><i
-                                                    class="btn fas fa-pencil-alt m-r-5" style="color: yellowgreen"></i></a>
+                                                    class="fas fa-pencil-alt m-r-5" style="color: yellowgreen"></i></a>
                                             <a href="#" data-toggle="modal" data-target="#delete"><i
                                                     class="fas fa-trash-alt m-r-5 delete" id="{{ $students->id }}"
                                                     name="{{ $students->nama_lengkap }}" style="color: red"></i></a>
